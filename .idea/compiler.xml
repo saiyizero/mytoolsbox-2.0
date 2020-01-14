@@ -7,20 +7,36 @@
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
         <module name="admin-request" />
-        <module name="admin-sysparam" />
+        <module name="tools-acctanlys" />
+        <module name="tools-filbatch" />
         <module name="tools-generator" />
-        <module name="virugan-common" />
-        <module name="virugan-springboot-jdbc" />
+        <module name="xbaseconstant" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>
+      <module name="admin-config" target="1.8" />
       <module name="admin-request" target="1.8" />
       <module name="admin-sysparam" target="1.8" />
       <module name="adminsysparam" target="1.8" />
       <module name="mytoolsbox-2.0" target="1.8" />
+      <module name="tools-acctanlys" target="1.8" />
+      <module name="tools-filbatch" target="1.8" />
       <module name="tools-generator" target="1.8" />
       <module name="virugan-common" target="1.8" />
       <module name="virugan-springboot-jdbc" target="1.8" />
+      <module name="xbase-constant" target="1.8" />
+      <module name="xbaseconstant" target="1.8" />
     </bytecodeTargetLevel>
+  </component>
+  <component name="JavacSettings">
+    <option name="ADDITIONAL_OPTIONS_OVERRIDE">
+      <module name="admin-config" options="-parameters" />
+      <module name="admin-request" options="-parameters" />
+      <module name="admin-sysparam" options="-parameters" />
+      <module name="tools-acctanlys" options="-parameters" />
+      <module name="tools-filbatch" options="-parameters" />
+      <module name="tools-generator" options="-parameters" />
+      <module name="xbase-constant" options="" />
+    </option>
   </component>
 </project>
