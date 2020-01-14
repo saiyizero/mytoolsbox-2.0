@@ -1,0 +1,138 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
+<script type="text/javascript" src="../localJs/public.js"></script>
+<script type="text/javascript" src="../localJs/account.js"></script>
+
+<title>修改补录-myToolsBox v1.0</title>
+</head>
+<body onload='accounteditLoad();'>
+<article class="page-container">
+	<form class="form form-horizontal" id="form-target-add">
+		<input type="hidden"  id="colsNumb" name="colsNumb">
+		<input type="hidden"  id="flag" name="flag">
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>账单类型（file_type）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="fileType" name="fileType">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>交易日期（tran_date）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="tranDate" name="tranDate">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>类型（grop_type）：</label>
+			<div class="formControls col-xs-8 col-sm-7"> <span class="select-box" style="width:150px;">
+			<select class="select" name="gropType" id="gropType" size="1">
+				<option value="">未处理</option>
+				<option value="伙食费">伙食费</option>
+				<option value="交通费">交通费</option>
+				<option value="购物">购物</option>
+				<option value="娱乐消费">娱乐消费</option>
+				<option value="大宗消费">大宗消费</option>
+				<option value="房租">房租</option>
+				<option value="还款">还款</option>
+				<option value="生活费">生活费</option>
+			</select>
+			</span> </div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>交易方式（tran_type）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="tranType" name="tranType">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>交易商铺（tran_objt）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="tranObjt" name="tranObjt">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>交易描述（tran_good）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="tranGood" name="tranGood">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>交易方向（tran_dict）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="tranDict" name="tranDict">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>交易金额（tran_amts）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="tranAmts" name="tranAmts">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>付款账户（payt_nums）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="paytNums" name="paytNums">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>账户类别（item_type）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="itemType" name="itemType">
+			</div>
+		</div>
+		<div class="row cl">
+			<label class="form-label col-xs-4 col-sm-4"><span class="c-red">*</span>账单文件（file_name）：</label>
+			<div class="formControls col-xs-8 col-sm-7">
+				<input type="text" class="input-text" value="" placeholder="" id="fileName" name="fileName">
+			</div>
+		</div>
+		<div class="row cl">
+			<div class="col-xs-8 col-sm-9 col-xs-offset-4 col-sm-offset-3">
+				<a class="btn btn-primary radius" onclick="accountEdit('');">&nbsp;&nbsp;保存&nbsp;&nbsp;</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="btn btn-danger radius" onclick="accountEdit('DEL');">&nbsp;&nbsp;删除&nbsp;&nbsp;</a>
+				&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+				<a class="btn btn-default radius" onclick="layer_cancel();">&nbsp;&nbsp;取消&nbsp;&nbsp;</a>
+			</div>
+		</div>
+	</form>
+</article>
+
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本--> 
+<script type="text/javascript" src="../lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+<script type="text/javascript">
+$(function(){
+	$('.skin-minimal input').iCheck({
+		checkboxClass: 'icheckbox-blue',
+		radioClass: 'iradio-blue',
+		increaseArea: '20%'
+	});
+});
+
+</script>
+<!--/请在上方写此页面业务相关的脚本-->
+</body>
+</html>

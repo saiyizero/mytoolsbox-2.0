@@ -1,0 +1,9 @@
+span.switch-danger.active{background-color:#e9322d \9}
+.lable-box{border:solid 0px #ddd;box-sizing:border-box;vertical-align:middle;width:100%;display:inline-block}
+.select{border:solid 1px #ddd;box-sizing:border-box;cursor:pointer;line-height:normal;font-weight:normal;width:100%;white-space:nowrap}
+.lable-box .select{border:0}.lable-box.inline,.lable-box.inline .select{width:auto}
+.lable-box,.lable-box.size-M{padding:4px 5px}.select,.size-M .select{font-size:14px}
+.lable-box.size-MINI{padding:0 5px}.size-MINI .select{font-size:12px}
+.lable-box.size-S{padding:3px 5px}.size-S .select{font-size:12px}
+.lable-box.size-L{padding:8px 5px}.size-L .select{font-size:16px}
+.lable-box.size-XL{padding:10px 5px}.size-XL .select{font-size:18px}@media(max-width:767px){.responsive .lable-box{border:0}.responsive .lable-box .select,.responsive .select{border:solid 1px #ddd;padding:10px;font-size:16px}.responsive .lable-box,.responsive .lable-box.size-M,.responsive .lable-box.size-MINI,.responsive .lable-box.size-S,.responsive .lable-box.size-L,.responsive .lable-box.size-XL{height:auto;padding:0}}

@@ -1,0 +1,17 @@
+package com.virugan.constant;
+
+public class myBaseDeclare {
+    /*文件名称*/
+    public static String filename="filename";
+    /*归属项目名称*/
+    public static String belgprjt="belgprjt";
+    /*模块名称*/
+    public static String belgmodl="belgmodl";
+    /*响应码*/
+    public static String respcode="respcode";
+    /*项目列表*/
+    public static String prjtlist="prjtlist";
+    /*模块列表*/
+    public static String modllist="modllist";
+
+}
