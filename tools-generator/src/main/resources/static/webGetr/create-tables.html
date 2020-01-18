@@ -12,72 +12,63 @@
 	<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
 	<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
 	<script type="text/javascript" src="../localJs/public.js"></script>
-	<script type="text/javascript" src="../lib/template-web.js"></script>
-	<script type="text/javascript" src="../localJs/base-declare.js"></script>
+	<script type="text/javascript" src="/lib/template-web.js"></script>
+	<script type="text/javascript" src="../localJs/create-tables.js"></script>
 	<link rel="stylesheet" type="text/css" href="../localcss/getrcss.css" />
-	<script type="text/html" id="detail_Template">
-		{{each resltlst as value i}}
-		<tr class="text-c odd" role="row">
-			<td><i class="Hui-iconfont">&#xe6df;</i></td>
-			<td>{{value.colsname}}</td>
-			<td>{{value.colsccmt}}</td>
-			<td>{{value.colslenh}}</td>
-			<td>{{value.colstype}}</td>
-		</tr>
-		{{/each}}
-	</script>
 	<![endif]-->
-	<title>基础词典</title>
+	<title>表结构</title>
 </head>
-
-
 <body>
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
-	代码生成器 <span class="c-gray en">&gt;</span> 基础词典
+	代码生成器 <span class="c-gray en">&gt;</span> 表结构
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" >
 		<i class="Hui-iconfont">&#xe68f;</i>
 	</a>
-</nav>
-<div class="page-container">
+</nav><div class="page-container">
 	<div id="tab-system" class="HuiTab">
 		<div class="tabBar cl">
-			<span>字段词典</span>
-			<span>词典配置</span>
+			<span>表结构</span>
+			<span>表配置</span>
 		</div>
 		<div class="tabCon">
 			<div class="page-container">
-				<div id="DataTables_Table_0_wrapper" class="dataTables_wrapper no-footer">
-					<table class="table table-border table-bordered table-hover table-bg table-sort">
-						<thead>
-						<tr class="text-c">
-							<th width="25">操作</th>
-							<th>字段名称</th>
-							<th>中文注释</th>
-							<th width="50">字段长度</th>
-							<th width="150">字段类型</th>
-						</tr>
-						<tr class="text-c">
-							<th width="25"><i class="Hui-iconfont">&#xe600;</i></th>
-							<th><input class="input-text"  id="colsname" name="colsname" value="" autocomplete="off" onkeydown="myKeyDown(this.id)" /></th>
-							<th><input class="input-text"  id="colsccmt" name="colsccmt" value="" autocomplete="off" onkeydown="myKeyDown(this.id)"/></th>
-							<th><input class="input-text"  id="colslenh" name="colslenh" value="" autocomplete="off" onkeydown="myKeyDown(this.id)"/></th>
-							<th><span class="select-box" style="width:150px;">
-							<select class="select" id="colstype" name="colstype" size="1"  onchange="onSelectChange();">
-									<option value="ALL">String</option>
-									<option value="ALL">int</option>
-									<option value="ALL">Integer</option>
-									<option value="ALL">BigDecimal</option>
-									<option value="ALL">boolean</option>
-									<option value="ALL">long</option>
-									<option value="EnumType">EnumType</option>
-							</select>
-						</span></th>
-						</tr>
-						</thead>
-						<tbody id="myTbody" />
-					</table>
-					<div class="dataTables_info" id="totalsize" role="status" aria-live="polite"></div>
-					<div class="dataTables_paginate paging_simple_numbers" id="paginateList"></div>
+				<div class="codeView docs-example" >
+					<div style="width: 100%;height: 400px;overflow:auto;">
+						<table class="table  table-hover table-bg table-sort" >
+							<tbody id="myTbody" >
+							<tr class="text-c">
+								<th>
+									<a href="javascript:void(0)" onclick="openTables('字典声明表','mytool_getr_basedecl')">
+										<i class="Hui-iconfont">&#xe627;</i>
+										<span>mytool_getr_basedecl</span>
+										<span>字典声明表</span>
+									</a>
+								</th>
+								<th>
+									<a href="javascript:void(0)">
+										<i class="Hui-iconfont">&#xe627;</i>
+										<span>mytool_getr_basedecl</span>
+										<span>字典声明表</span>
+									</a>
+								</th>
+								<th>
+									<a href="javascript:void(0)">
+										<i class="Hui-iconfont">&#xe627;</i>
+										<span>mytool_getr_basedecl</span>
+										<span>字典声明表</span>
+									</a>
+								</th>
+								<th>
+									<a href="javascript:void(0)">
+										<i class="Hui-iconfont">&#xe627;</i>
+										<span>mytool_getr_basedecl</span>
+										<span>字典声明表</span>
+									</a>
+								</th>
+							</tr>
+							</tbody>
+						</table>
+					</div>
 				</div>
 			</div>
 		</div>
@@ -130,11 +121,6 @@
 <script type="text/javascript" src="../lib/datatables/1.10.0/jquery.dataTables.min.js"></script>
 <script type="text/javascript" src="../lib/laypage/1.2/laypage.js"></script>
 <script type="text/javascript">
-
-	//载入时进行查询
-	$(function(){
-		onchangePages(1);
-	});
 
 	$(function(){
 		$('.skin-minimal input').iCheck({

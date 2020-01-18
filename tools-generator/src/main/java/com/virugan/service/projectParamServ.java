@@ -1,32 +1,19 @@
 package com.virugan.service;
 
-import com.virugan.api.getrDynamicJdbcOperate;
 import com.virugan.api.localJdbcOperate;
 import com.virugan.constant.myBaseDeclare;
 import com.virugan.constant.myBaseEnume;
 import com.virugan.myUtlis.myBeanUtils;
-import com.virugan.myUtlis.myJsonUtils;
-import com.virugan.myUtlis.myLogUtils;
 import com.virugan.tables.mytoolGetrPrjtpara;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.beans.factory.annotation.Value;
 import org.springframework.stereotype.Component;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.ResponseBody;
 
-import java.math.BigDecimal;
-import java.sql.Connection;
-import java.sql.SQLException;
-import java.util.Arrays;
 import java.util.List;
 import java.util.Map;
 
 @Component
 public class projectParamServ {
-
-    @Autowired
-    getrDynamicJdbcOperate dynamicJdbcOperate;
     @Autowired
     localJdbcOperate localjdbcOperate;
     @Value("${getr.currentproject}")

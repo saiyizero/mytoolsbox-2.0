@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="renderer" content="webkit|ie-comp|ie-stand">
+<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+<link rel="Bookmark" href="/favicon.ico" >
+<link rel="Shortcut Icon" href="/favicon.ico" />
+<link rel="stylesheet" type="text/css" href="../static/h-ui/css/H-ui.min.css" />
+<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/H-ui.admin.css" />
+<link rel="stylesheet" type="text/css" href="../lib/Hui-iconfont/1.0.8/iconfont.css" />
+<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/skin/default/skin.css" id="skin" />
+<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
+<script type="text/javascript" src="../localJs/public.js"></script>
+<script type="text/javascript" src="../localJs/create-tables.js"></script>
+<title>表结构-tables</title>
+</head>
+<body >
+<div class="page-container">
+	<div id="tab-system" class="HuiTab">
+		<div class="tabBar cl">
+			<span>字段名</span>
+			<span>主键索引</span>
+			<span>DDL</span>
+		</div>
+		<div class="tabCon">
+			<div class="page-container">
+				<table class="table table-border table-bordered table-hover table-bg table-sort">
+					<thead><tr class="text-c">
+						<th>字段名称</th>
+						<th>字段类型</th>
+						<th>字段注释</th>
+						<th width="50">是否空</th>
+						<th>默认值</th>
+					</tr></thead>
+					<tbody id="myTbody" >
+						<tr class="text-c">
+							<td>belgprjt</td>
+							<td>varchar(100)</td>
+							<td>归属项目名称</td>
+							<td>Y</td>
+							<td></td>
+						</tr>
+						<tr class="text-c">
+							<td>belgmodl</td>
+							<td>varchar(20)</td>
+							<td>模块名称</td>
+							<td>Y</td>
+							<td></td>
+						</tr>
+						<tr class="text-c">
+							<td>colsname</td>
+							<td>varchar(30)</td>
+							<td>声明字段名称</td>
+							<td>Y</td>
+							<td></td>
+						</tr>
+						<tr class="text-c">
+							<td>colslenh</td>
+							<td>int</td>
+							<td>声明字段长度</td>
+							<td>Y</td>
+							<td>0</td>
+						</tr>
+						<tr class="text-c">
+							<td>colstype</td>
+							<td>varchar(20)</td>
+							<td>声明字段类型</td>
+							<td>Y</td>
+							<td></td>
+						</tr>
+						<tr class="text-c">
+							<td>colsccmt</td>
+							<td>varchar(200)</td>
+							<td>声明字段注释</td>
+							<td>Y</td>
+							<td></td>
+						</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="tabCon">
+			<div class="page-container">
+				<table class="table table-border table-bordered table-hover table-bg table-sort">
+					<thead><tr class="text-c">
+						<th width="25%">索引名称</th>
+						<th width="50">索引类型</th>
+						<th>索引字段</th>
+					</tr></thead>
+					<tbody id="myTbody" >
+					<tr class="text-c">
+						<td >mytool_getr_basedecl_idx1</td>
+						<td>index</td>
+						<td>belgprjt,belgmodl,colsname</td>
+					</tr>
+					</tbody>
+				</table>
+			</div>
+		</div>
+		<div class="tabCon">
+			<div class="page-container">
+				<table class="table table-border table-bordered table-bg mt-20">
+					<thead>
+					<tr>
+						<th colspan="2" scope="col">
+							<a title="批量执行" href="javascript:;" onclick="barchRemove();" class="ml-5" style="text-decoration:none;">
+								批量执行	<i class="Hui-iconfont">&#xe6e6;</i>
+							</a>
+							<a title="清除控制台" href="javascript:;" onclick="cleartextArea('delTextarea');" class="ml-5" style="text-decoration:none;">
+								清除控制台	<i class="Hui-iconfont">&#xe68f;</i>
+							</a>
+						</th>
+					</tr>
+					</thead>
+				</table>
+			</div>
+		</div>
+	</div>
+</div>
+
+
+<!--_footer 作为公共模版分离出去-->
+<script type="text/javascript" src="../lib/jquery/1.9.1/jquery.min.js"></script>
+<script type="text/javascript" src="../lib/layer/2.4/layer.js"></script>
+<script type="text/javascript" src="../static/h-ui/js/H-ui.min.js"></script>
+<script type="text/javascript" src="../static/h-ui.admin/js/H-ui.admin.js"></script> <!--/_footer 作为公共模版分离出去-->
+
+<!--请在下方写此页面业务相关的脚本--> 
+<script type="text/javascript" src="../lib/My97DatePicker/4.8/WdatePicker.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/jquery.validate.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/validate-methods.js"></script>
+<script type="text/javascript" src="../lib/jquery.validation/1.14.0/messages_zh.js"></script>
+
+<script type="text/javascript">
+
+	$(function(){
+		$('.skin-minimal input').iCheck({
+			checkboxClass: 'icheckbox-blue',
+			radioClass: 'iradio-blue',
+			increaseArea: '20%'
+		});
+		$("#tab-system").Huitab({
+			index:0
+		});
+	});
+</script>
+</body>
+</html>

@@ -1,3 +1,4 @@
-"dblnkurl":"127.0.0.1","entypath":"m:/","bseumpth":"f:/","dbpaswrd":"sa26212835","excpnpth":"g:/",
-"bscolpth":"d:/","maprpath":"h:/","dbdriver":"jdbc","prjtpath":"c:/","dbusrnme":"banksys",
-"belgmodl":"getr","mxmlpath":"l:/","belgprjt":"mytoolsbox-2.0","prjtlist":["projt","mytoolsbox-2.0"],"modllist":["getr"],"respcode":"SUCESS"
+<a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous">上一页</a>
+<a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" onclick="onchangePages(1)">1</a>
+<a class="paginate_button current" aria-controls="DataTables_Table_0" data-dt-idx="1" tabindex="0" onclick="onchangePages(0)">0</a>
+<a class="paginate_button previous disabled" aria-controls="DataTables_Table_0" data-dt-idx="0" tabindex="0" id="DataTables_Table_0_previous" onclick="onchangePages(2)">上一页</a>

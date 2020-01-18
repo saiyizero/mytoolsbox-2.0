@@ -13,5 +13,8 @@ public class myBaseDeclare {
     public static String prjtlist="prjtlist";
     /*模块列表*/
     public static String modllist="modllist";
-
+    /*结果列表*/
+    public static String resltlst="resltlst";
+    /*分页数据*/
+    public static String pagedata="pagedata";
 }

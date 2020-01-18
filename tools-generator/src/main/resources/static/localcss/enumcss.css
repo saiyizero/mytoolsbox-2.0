@@ -1,0 +1,23 @@
+@charset "utf-8";
+html{height:100%}
+body{min-height: 100%;position: relative;font-size:14px;color:#333; background-color:#fff}
+a{color:#333}a:hover,a:focus,.maincolor,.maincolor a{color:#06c}
+.bg-1{ background-color:#f5fafe}
+h4{line-height:30px}
+
+.Enum-aside{position: absolute;top:0px;bottom:0;left:0;padding-top:0px;width:200px;z-index:99;overflow:auto;
+ background-color:rgb(248,248,248);_background-color:rgb(248,248,248);border-right: 1px solid #e5e5e5}
+.Hui-article-box{position: absolute;top:0px;right:0;bottom: 0;left:200px; overflow:hidden; z-index:1; background-color:#fff}
+.Hui-article{position: absolute;top:30px;bottom:0;left:0; right:0;overflow:auto;z-index:1}
+.Hui-container{ padding:45px 0 0}
+.Enum-aside,.Hui-article-box,.dislpayArrow{-moz-transition: all 0.2s ease 0s;-webkit-transition: all 0.2s ease 0s;-ms-transition: all 0.2s ease 0s;-o-transition: all 0.2s ease 0s;transition: all 0.2s ease 0s}
+.big-page .Hui-article-box,.big-page .dislpayArrow,.big-page .breadcrumb{left:0px}
+.big-page .Enum-aside{ left:-200px}
+.page-container{ padding:20px}
+
+#Hui-msg .badge{ position:absolute; left:19px; top:4px; font-size:12px; font-weight:normal; padding:1px 5px}
+/*左侧菜单*/
+.Enum-aside .menu_dropdown ul { padding:0px}
+.Enum-aside .menu_dropdown ul li { line-height:35px;overflow:hidden;zoom:1}
+.Enum-aside .menu_dropdown ul li a { padding-left:15px;line-height:35px; display:block;font-weight: bold; margin:0;border-bottom: 1px solid #e5e5e5;}
+.Enum-aside .menu_dropdown ul li a:hover { text-decoration: none;}

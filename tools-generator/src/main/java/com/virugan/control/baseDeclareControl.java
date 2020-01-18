@@ -1,21 +1,35 @@
 package com.virugan.control;
 
+import com.virugan.constant.myBaseDeclare;
+import com.virugan.constant.myBaseEnume;
 import com.virugan.myUtlis.myJsonUtils;
+import com.virugan.service.baseDeclareServ;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.Map;
 
 /**
  * 基础词典维护
  * **/
-@RestController
-@RequestMapping("/getr/baseDeclareControl/")
+@Controller
+@RequestMapping("webGetr/baseDeclareControl/")
 public class baseDeclareControl {
+    @Autowired
+    baseDeclareServ basedeclareserv;
 
-    //基础字典模糊查询
-    @RequestMapping(value="fuzzyQuery.req")
-    public String fuzzyQuery(Map<String,Object> ctxmap){
+    /*基础字典模糊查询*/
+    @RequestMapping(value="fuzzyQuery.req",method = {RequestMethod.POST},produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String fuzzyQuery(@RequestParam Map<String,Object> ctxmap){
+
+        ctxmap.putAll(basedeclareserv.fuzzyQuery(ctxmap));
+        ctxmap.put(myBaseDeclare.respcode, myBaseEnume.E_RESPCODE.SUCESS);
+
         return myJsonUtils.toJsonString(ctxmap);
     }
 

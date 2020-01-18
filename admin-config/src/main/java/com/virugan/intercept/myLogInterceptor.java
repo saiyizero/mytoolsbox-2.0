@@ -29,7 +29,9 @@ public class myLogInterceptor {
 
         Object result= pjp.proceed();
 
-        System.out.println("debug <<<< "+ result.getClass().getSimpleName()+" :["+ result+"]");
+        if(result!=null && result.toString().length()<1000){
+            System.out.println("debug <<<< "+ result.getClass().getSimpleName()+" :["+ result+"]");
+        }
 
         System.out.println("debug <<<< "+ LocalDateTime.now()+" <<<<<<<<<<<<<<< "+
                 pjp.getSignature().getDeclaringTypeName()+ " <<<<<<<<<<<<<<<");
