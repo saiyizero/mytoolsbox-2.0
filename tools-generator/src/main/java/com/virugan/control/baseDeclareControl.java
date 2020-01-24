@@ -22,7 +22,7 @@ public class baseDeclareControl {
     @Autowired
     baseDeclareServ basedeclareserv;
 
-    /*基础字典模糊查询*/
+    /*基础字典全量查询*/
     @RequestMapping(value="fuzzyQuery.req",method = {RequestMethod.POST},produces = "application/json;charset=UTF-8")
     @ResponseBody
     public String fuzzyQuery(@RequestParam Map<String,Object> ctxmap){
@@ -33,9 +33,25 @@ public class baseDeclareControl {
         return myJsonUtils.toJsonString(ctxmap);
     }
 
+    /*基础字典模糊查询*/
+    @RequestMapping(value="blurredQuery.req",method = {RequestMethod.POST},produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public  String blurredQuery(@RequestParam Map<String,Object> ctxmap){
+
+        ctxmap.putAll(basedeclareserv.blurredQuery(ctxmap));
+        ctxmap.put(myBaseDeclare.respcode, myBaseEnume.E_RESPCODE.SUCESS);
+
+        return myJsonUtils.toJsonString(ctxmap);
+    }
+
     //添加基础字典
-    @RequestMapping(value="addWordBook.req")
-    public String addWordBook(Map<String,Object> ctxmap){
+    @RequestMapping(value="addWordBook.req",method = {RequestMethod.POST},produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String addWordBook(@RequestParam Map<String,Object> ctxmap){
+
+        ctxmap.putAll(basedeclareserv.addWordBook(ctxmap));
+        ctxmap.put(myBaseDeclare.respcode, myBaseEnume.E_RESPCODE.SUCESS);
+
         return myJsonUtils.toJsonString(ctxmap);
     }
 

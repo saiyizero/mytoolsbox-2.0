@@ -14,65 +14,31 @@
 	<link rel="stylesheet" type="text/css" href="../static/h-ui.admin/css/style.css" />
 	<script type="text/javascript" src="../localJs/public.js"></script>
 	<script type="text/javascript" src="../lib/template-web.js"></script>
-	<script type="text/javascript" src="../localJs/base-declare.js"></script>
+	<script type="text/javascript" src="../localJs/enum-declare.js"></script>
 	<link rel="stylesheet" type="text/css" href="../localcss/enumcss.css" />
 	<style type="text/css">
 		#Hui-nav li#Huinav_2 a,
 		#Hui-nav li#Huinav_2 a:hover { color: #fff; background-color: #fff }
 	</style>
+	<script type="text/html" id="enum_Template">
+		{{each resltlst as value i}}
+			<tr>
+				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+					<a href="javascript:void(0)" onclick="showDetail('{{value.enumcols}}');">{{value.enumcols}}</a>
+				</td>
+			</tr>
+		{{/each}}
+	</script>
 </head>
-<body>
+<body onload='thisOnLoad();'>
 <aside class="Enum-aside">
 	<table class="table table-border table-bordered table-hover table-bg table-sort">
 		<thead>
 		<tr class="text-c">
-			<th><input class="input-text"  id="colsname" name="colsname" value="" autocomplete="off" onkeydown="myKeyDown(this.id)" /></th>
+			<th><input class="input-text"  id="enumcols" name="enumcols" value="" autocomplete="off" onkeydown="myKeyDown(this.id)" /></th>
 		</tr>
 		</thead>
-		<tbody id="enumTbody" >
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-			<tr><td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<a href="javascript:void(0)">E_JIAOYIRIQ</a></td></tr>
-		</tbody>
+		<tbody id="enumTbody" ></tbody>
 	</table>
 </aside>
 
@@ -84,7 +50,7 @@
 			<span class="1" style="width:50px;">
 				<strong>长度：</strong><input class="input-text"  readonly="readonly" value="10" style="width:50px;"/>
 			</span>
-			<a href="javascript:;" onclick="layer_show('新增枚举','project-param-add.html','1000','660');"
+			<a href="javascript:;" onclick="layer_show('新增枚举','enum-declare-add.html','850','270');"
 			   class="btn btn-primary-outline"><i class="Hui-iconfont">&#xe600;</i> 新增枚举</a>
 			<a href="javascript:;" onclick="layer_show('删除枚举','project-param-upd.html','1000','720');"
 			   class="btn btn-danger-outline"><i class="Hui-iconfont">&#xe609;</i> 删除枚举</a>

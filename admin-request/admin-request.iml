@@ -25,12 +25,21 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
+    <orderEntry type="module" module-name="virugan-common" />
+    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
+    <orderEntry type="module" module-name="virugan-common" />
+    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
+    <orderEntry type="module" module-name="virugan-common" />
+    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
+    <orderEntry type="module" module-name="virugan-common" />
+    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
+    <orderEntry type="module" module-name="virugan-common" />
+    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
     <orderEntry type="library" name="Maven: com.jxbrowser:jxbrowser:6.14" level="project" />
     <orderEntry type="library" name="Maven: com.virugan.jxbrowser:jxbrowser-win32:6.14" level="project" />
     <orderEntry type="module" module-name="admin-config" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.1.6.RELEASE" level="project" />
-    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: javax.annotation:javax.annotation-api:1.3.2" level="project" />
     <orderEntry type="library" name="Maven: org.springframework:spring-core:5.1.8.RELEASE" level="project" />
@@ -88,6 +97,10 @@
     <orderEntry type="library" name="Maven: mysql:mysql-connector-java:8.0.16" level="project" />
     <orderEntry type="library" name="Maven: org.xerial:sqlite-jdbc:3.25.2" level="project" />
     <orderEntry type="library" name="Maven: org.mybatis.generator:mybatis-generator-core:1.3.5" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-test:2.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot:2.1.6.RELEASE" level="project" />
+    <orderEntry type="library" name="Maven: junit:junit:4.12" level="project" />
+    <orderEntry type="library" name="Maven: org.hamcrest:hamcrest-core:1.3" level="project" />
     <orderEntry type="module" module-name="tools-generator" />
   </component>
 </module>

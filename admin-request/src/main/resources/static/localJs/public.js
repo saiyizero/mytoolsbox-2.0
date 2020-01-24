@@ -147,67 +147,32 @@ function suffixPages(msg,totalid,pageid){
 	var curpagnos=msg.pagedata.curpagno;
 	var totalpags=msg.pagedata.totalpag;
 	var totalnums=msg.pagedata.totalnum;
-
 	var totalstr="当前第 "+curpagnos+" 页 ，总计 "+totalpags+"页 ，共 "+totalnums+" 条";
+
+	var pagelists=msg.pagedata.pagelist;
 	var pagestr="";
-	var prepgnum=curpagnos-1;
-	if(prepgnum<=0){
-		 pagestr="<a class=\"paginate_button previous disabled\" aria-controls=\"DataTables_Table_0\" " +
-			"data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\">上一页</a>"
-	}else{
-		pagestr="<a class=\"paginate_button previous disabled\" aria-controls=\"DataTables_Table_0\" " +
-			"data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\" onclick=\"onchangePages("+prepgnum+")\">上一页</a>"
-	}
-	if(curpagnos==1){
-		pagestr=pagestr+"<a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" " +
-			"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages(1)\">1</a>";
-	}else{
-		pagestr=pagestr+"<a class=\"paginate_button\" aria-controls=\"DataTables_Table_0\" " +
-			"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages(1)\">1</a>";
-	}
 
-	if(curpagnos-3<=1){
-		if(curpagnos==2){
-			pagestr=pagestr+"<a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" " +
-				"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages(2)\">2</a>";
+	for(var i=0;i<pagelists.length;i++){
+		var pageName = pagelists[i].pageName;
+		var pageNo =pagelists[i].pageNo;
+		if(pageName=="上一页"){
+			pagestr=pagestr+"<a class=\"paginate_button previous disabled\" aria-controls=\"DataTables_Table_0\" " +
+				"data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\" onclick=\"onchangePages("+pageNo+")\">上一页</a>"
+		}else if(pageName=="下一页"){
+			pagestr=pagestr+"<a class=\"paginate_button next\" aria-controls=\"DataTables_Table_0\" " +
+				"data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\" onclick=\"onchangePages("+pageNo+")\">下一页</a>"
+		}else if(pageName=="..."){
+			pagestr=pagestr+"<span>...</span>";
 		}else{
-			pagestr=pagestr+"<a class=\"paginate_button\" aria-controls=\"DataTables_Table_0\" " +
-				"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages(2)\">2</a>";
+			if(pageNo==curpagnos){
+				pagestr=pagestr+"<a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" " +
+					"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages("+pageNo+")\">"+pageName+"</a>";
+			}else{
+				pagestr=pagestr+"<a class=\"paginate_button\" aria-controls=\"DataTables_Table_0\" " +
+					"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages("+pageNo+")\">"+pageName+"</a>";
+			}
 		}
-	}else{
-		pagestr=pagestr+"<span>…</span>";
 	}
-
-
-	if(totalpags-curpagnos<=3){
-		if(curpagnos==(totalpags-1)){
-			pagestr=pagestr+"<a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" " +
-				"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages("+(totalpags-1)+")\">"+(totalpags-1)+"</a>";
-		}else{
-			pagestr=pagestr+"<a class=\"paginate_button\" aria-controls=\"DataTables_Table_0\" " +
-				"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages("+(totalpags-1)+")\">"+(totalpags-1)+"</a>";
-		}
-	}else {
-		pagestr=pagestr+"<span>…</span>";
-	}
-
-	if(curpagnos==totalpags){
-		pagestr=pagestr+"<a class=\"paginate_button current\" aria-controls=\"DataTables_Table_0\" " +
-			"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages("+totalpags+")\">"+totalpags+"</a>";
-	}else{
-		pagestr=pagestr+"<a class=\"paginate_button\" aria-controls=\"DataTables_Table_0\" " +
-			"data-dt-idx=\"1\" tabindex=\"0\" onclick=\"onchangePages("+totalpags+")\">"+totalpags+"</a>";
-	}
-
-	var nexpgnum=curpagnos+1;
-	if(prepgnum>totalpags){
-		pagestr=pagestr+"<a class=\"paginate_button previous disabled\" aria-controls=\"DataTables_Table_0\" " +
-			"data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\">上一页</a>"
-	}else{
-		pagestr=pagestr+"<a class=\"paginate_button next\" aria-controls=\"DataTables_Table_0\" " +
-			"data-dt-idx=\"0\" tabindex=\"0\" id=\"DataTables_Table_0_previous\" onclick=\"onchangePages("+nexpgnum+")\">下一页</a>"
-	}
-
 
 	$("#"+totalid).html(totalstr);
 	$("#"+pageid).html(pagestr);

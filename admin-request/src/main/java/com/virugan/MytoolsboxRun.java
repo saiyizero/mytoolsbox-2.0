@@ -4,7 +4,6 @@ import com.teamdev.jxbrowser.chromium.Browser;
 import com.teamdev.jxbrowser.chromium.events.*;
 import com.teamdev.jxbrowser.chromium.swing.BrowserView;
 import com.virugan.myUtlis.myLogUtils;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
 
@@ -17,8 +16,7 @@ public class MytoolsboxRun  implements CommandLineRunner {
     @Override
     public void run(String... args) throws Exception {
         //RunJFrame();
-
-        myLogUtils.debug(" is run !!!");
+        System.err.println("MytoolsboxApplication is started !!!");
     }
 
     public static void RunJFrame() {
@@ -33,18 +31,6 @@ public class MytoolsboxRun  implements CommandLineRunner {
         frame.setMinimumSize(new Dimension(1200, 700));
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
-        browser.addLoadListener(new LoadAdapter() {
-            public void onFinishLoadingFrame(FinishLoadingEvent event) {
-            }
-            public void onProvisionalLoadingFrame(ProvisionalLoadingEvent event) {
-            }
-        });
-        browser.addScriptContextListener(new ScriptContextListener() {
-            public void onScriptContextDestroyed(ScriptContextEvent event) {
-            }
-            public void onScriptContextCreated(ScriptContextEvent arg0) {
-            }
-        } );
-        browser.loadURL("http://localhost:8080/index.html");
+        browser.loadURL("http://localhost:3392/index.html");
     }
 }

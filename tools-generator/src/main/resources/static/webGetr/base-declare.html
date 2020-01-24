@@ -18,7 +18,7 @@
 	<script type="text/html" id="detail_Template">
 		{{each resltlst as value i}}
 		<tr class="text-c odd" role="row">
-			<td><i class="Hui-iconfont">&#xe6df;</i></td>
+			<td><a href="javascript:;" onclick="updWordBook('{{value.colsname}}');"><i class="Hui-iconfont">&#xe6df;</i></a></td>
 			<td>{{value.colsname}}</td>
 			<td>{{value.colsccmt}}</td>
 			<td>{{value.colslenh}}</td>
@@ -57,18 +57,18 @@
 							<th width="150">字段类型</th>
 						</tr>
 						<tr class="text-c">
-							<th width="25"><i class="Hui-iconfont">&#xe600;</i></th>
-							<th><input class="input-text"  id="colsname" name="colsname" value="" autocomplete="off" onkeydown="myKeyDown(this.id)" /></th>
-							<th><input class="input-text"  id="colsccmt" name="colsccmt" value="" autocomplete="off" onkeydown="myKeyDown(this.id)"/></th>
-							<th><input class="input-text"  id="colslenh" name="colslenh" value="" autocomplete="off" onkeydown="myKeyDown(this.id)"/></th>
+							<th width="25"><a href="javascript:;" onclick="addWordBook();"><i class="Hui-iconfont">&#xe600;</i></a></th>
+							<th><input class="input-text"  id="colsname" name="colsname"  onkeydown="onInputChange();" autocomplete="off" /></th>
+							<th><input class="input-text"  id="colsccmt" name="colsccmt"  onkeydown="onInputChange();" autocomplete="off" /></th>
+							<th><input class="input-text"  id="colslenh" name="colslenh"  autocomplete="off" onkeyup="myKeyDown();" /></th>
 							<th><span class="select-box" style="width:150px;">
 							<select class="select" id="colstype" name="colstype" size="1"  onchange="onSelectChange();">
-									<option value="ALL">String</option>
-									<option value="ALL">int</option>
-									<option value="ALL">Integer</option>
-									<option value="ALL">BigDecimal</option>
-									<option value="ALL">boolean</option>
-									<option value="ALL">long</option>
+									<option value="String">String</option>
+									<option value="int">int</option>
+									<option value="Integer">Integer</option>
+									<option value="BigDecimal">BigDecimal</option>
+									<option value="boolean">boolean</option>
+									<option value="long">long</option>
 									<option value="EnumType">EnumType</option>
 							</select>
 						</span></th>

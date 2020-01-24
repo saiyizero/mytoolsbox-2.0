@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="mapping.sqliteMapper" >
+	<resultMap id="GetrBasedeclMap" type="com.virugan.tables.mytoolGetrBasedecl" >
+		<result column="belgprjt" property="belgprjt" jdbcType="VARCHAR" />
+		<result column="belgmodl" property="belgmodl" jdbcType="VARCHAR" />
+		<result column="colsname" property="colsname" jdbcType="VARCHAR" />
+		<result column="colslenh" property="colslenh" jdbcType="VARCHAR" />
+		<result column="colstype" property="colstype" jdbcType="VARCHAR" />
+		<result column="colsccmt" property="colsccmt" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="GetrBasedeclList">
+		belgprjt,belgmodl,colsname,colslenh,colstype,colsccmt
+  	</sql>
+	<select id="GetrBaseDeclFuzzQueryCount" resultType="Integer" >
+		<bind name="colsnamelike" value="colsname + '%'" />
+		<bind name="colsccmtlike" value="colsccmt + '%'" />
+		select count(1) from mytool_getr_basedecl
+		<trim prefix="WHERE" prefixOverrides="AND">
+			<if test="belgprjt!=null">
+				AND  belgprjt=#{belgprjt,jdbcType=VARCHAR}
+			</if>
+			<if test="belgmodl!=null">
+				AND  belgmodl=#{belgmodl,jdbcType=VARCHAR}
+			</if>
+			<if test="colsname!=null">
+				AND  colsname like #{colsnamelike}
+			</if>
+			<if test="colsccmt!=null">
+				AND  colsccmt like #{colsccmtlike}
+			</if>
+		</trim>
+	</select>
+	<select id="GetrBaseDeclFuzzQuery" resultMap="GetrBasedeclMap" >
+		<bind name="colsnamelike" value="colsname + '%'" />
+		<bind name="colsccmtlike" value="colsccmt + '%'" />
+		select
+		<include refid="GetrBasedeclList" />
+		from mytool_getr_basedecl
+		<trim prefix="WHERE" prefixOverrides="AND">
+			<if test="belgprjt!=null">
+				AND  belgprjt=#{belgprjt,jdbcType=VARCHAR}
+			</if>
+			<if test="belgmodl!=null">
+				AND  belgmodl=#{belgmodl,jdbcType=VARCHAR}
+			</if>
+			<if test="colsname!=null">
+				AND  colsname like #{colsnamelike}
+			</if>
+			<if test="colsccmt!=null">
+				AND  colsccmt like #{colsccmtlike}
+			</if>
+		</trim>
+		limit #{pagesize} offset #{startnum}
+	</select>
+
+	<resultMap id="GetrEnumDeclMap" type="com.virugan.tables.mytoolGetrEnumdict" >
+		<result column="belgprjt" property="belgprjt" jdbcType="VARCHAR" />
+		<result column="belgmodl" property="belgmodl" jdbcType="VARCHAR" />
+		<result column="enumcols" property="enumcols" jdbcType="VARCHAR" />
+		<result column="enumname" property="enumname" jdbcType="VARCHAR" />
+	</resultMap>
+	<sql id="GetrEnumDeclList">
+		belgprjt,belgmodl,enumcols,enumname
+  	</sql>
+	<select id="GetrBaseEnumQuery" resultMap="GetrEnumDeclMap" >
+		<if test="enumcols != null">
+			<bind name="enumcolslike" value="enumcols + '%'" />
+		</if>
+		select
+		<include refid="GetrEnumDeclList" />
+		from mytool_getr_enumdict
+		<trim prefix="WHERE" prefixOverrides="AND">
+			<if test="belgprjt!=null">
+				AND  belgprjt=#{belgprjt,jdbcType=VARCHAR}
+			</if>
+			<if test="belgmodl!=null">
+				AND  belgmodl=#{belgmodl,jdbcType=VARCHAR}
+			</if>
+			<if test="enumcols!=null">
+				AND  enumcols like #{enumcolslike}
+			</if>
+		</trim>
+	</select>
+
+</mapper>
