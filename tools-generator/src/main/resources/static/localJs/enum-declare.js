@@ -4,6 +4,10 @@ function callback(msg,callNme) {
         baseEnumQueryCallBack(msg);
     }else if(callNme=="addEnumDictsCallBack"){
         addEnumDictsCallBack(msg);
+    }else if(callNme=="enumDetailQueryCallBack"){
+        enumDetailQueryCallBack(msg);
+    }else if(callNme=="addEnumDetailsCallBack"){
+        addEnumDetailsCallBack(msg);
     }
 }
 //枚举查询回调
@@ -16,6 +20,20 @@ function thisOnLoad(){
     var data={
     };
     ajaxPost("enumDeclareControl/baseEnumQuery.req",data,"baseEnumQueryCallBack");
+}
+
+//当输入时模糊查询
+function queryByEnumcols(){
+
+    if (191 == event.keyCode && event.altKey) {
+        var enumcols=$("#enumcols").val();
+        var colsccmt=$("#colsccmt").val();
+
+        var data={
+            enumcols:enumcols
+        };
+        ajaxPost("enumDeclareControl/baseEnumQuery.req",data,"baseEnumQueryCallBack");
+    }
 }
 
 //新增枚举回掉
@@ -37,7 +55,60 @@ function addEnumDicts(){
     }
     var data={
         enumcols:e_numcols,
-        enumname:$("#enumname").val()
+        enumname:$("#enumname").val(),
+        enumlegh:$("#enumlegh").val()
     };
     ajaxPost("enumDeclareControl/addEnumDicts.req",data,"addEnumDictsCallBack");
 }
+
+//枚举名细查询回调
+function enumDetailQueryCallBack(msg){
+    $("#dict_enumname").html(msg.enumcols+"&nbsp;&nbsp;&nbsp;["+msg.enumname+"]");
+
+    $("#dict_enumcols").val(msg.enumcols);
+
+    $("#enumlegh").val(msg.enumlegh);
+    innerHtmlForTemplate('tableBody','enum_Detail_Template',msg);
+}
+
+//枚举名细查询
+function enumDetailQuery(enumcol){
+    var data={
+        enumcols:enumcol
+    };
+    ajaxPost("enumDeclareControl/enumDetailQuery.req",data,"enumDetailQueryCallBack");
+}
+
+//新增枚举明细回调
+function addEnumDetailsCallBack(msg){
+    enumDetailQuery(msg.enumcols);
+}
+
+//新增枚举明细
+function addEnumDetails(){
+
+    var enumcolss=$("#dict_enumcols").val();
+    var enumstats=$("#enumstat").val();
+    var valudescs=$("#valudesc").val();
+    var enumvalus=$("#enumvalu").val();
+    var data={
+        enumcols:enumcolss,
+        enumstat:enumstats,
+        valudesc:valudescs,
+        enumvalu:enumvalus
+    };
+    ajaxPost("enumDeclareControl/addEnumDetails.req",data,"addEnumDetailsCallBack");
+}
+
+//选中该枚举
+function selectPoint(enumcols){
+    var point="<a href=\"javascript:void(0);\" onclick=\"changePoint();\"><span id='colstype' name='colstype' value='"+
+        enumcols+"'>" +enumcols +"</span></a>";
+
+    var index=parent.layer.getFrameIndex(window.name);
+
+    console.log(point);
+    parent.$("#point_colstype").html(point);
+    parent.layer.close(index);
+}
+

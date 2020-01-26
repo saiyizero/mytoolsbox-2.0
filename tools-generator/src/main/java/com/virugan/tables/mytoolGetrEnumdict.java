@@ -18,6 +18,8 @@ public class mytoolGetrEnumdict extends myComponent {
     private String enumcols;
     /** 枚举注释 **/
     private String enumname;
+    /** 枚举长度 **/
+    private Integer enumlegh;
 
     public String getBelgprjt() {
         return belgprjt;
@@ -51,6 +53,14 @@ public class mytoolGetrEnumdict extends myComponent {
         this.enumname = enumname;
     }
 
+    public Integer getEnumlegh() {
+        return enumlegh;
+    }
+
+    public void setEnumlegh(Integer enumlegh) {
+        this.enumlegh = enumlegh;
+    }
+
     public List<String> getPrimaryKey() {
         return Arrays.asList("belgprjt","belgmodl","enumcols");
     }
@@ -62,4 +72,6 @@ public class mytoolGetrEnumdict extends myComponent {
     public myIndexDepict getIndex(String indexid) {
         return null;
     }
+
+
 }

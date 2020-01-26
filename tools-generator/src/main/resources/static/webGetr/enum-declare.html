@@ -24,10 +24,38 @@
 		{{each resltlst as value i}}
 			<tr>
 				<td>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-					<a href="javascript:void(0)" onclick="showDetail('{{value.enumcols}}');">{{value.enumcols}}</a>
+					<a href="javascript:void(0)" onclick="enumDetailQuery('{{value.enumcols}}');">
+						{{value.enumcols}} &nbsp;&nbsp; [{{value.enumname}}]
+					</a>
 				</td>
 			</tr>
 		{{/each}}
+	</script>
+	<script type="text/html" id="enum_Detail_Template">
+		<thead>
+			<tr class="text-c">
+				<th width="60">操作</th>
+				<th>枚举声明</th>
+				<th>中文描述</th>
+				<th>枚举值</th>
+			</tr>
+			<tr class="text-c">
+				<th width="25"><a href="javascript:;" onclick="addEnumDetails();"><i class="Hui-iconfont">&#xe600;</i>新增</a></th>
+				<th><input class="input-text"  id="enumstat" name="enumstat" value="" autocomplete="off" /></th>
+				<th><input class="input-text"  id="valudesc" name="valudesc" value="" autocomplete="off" /></th>
+				<th><input class="input-text"  id="enumvalu" name="enumvalu" value="" autocomplete="off" /></th>
+			</tr>
+		</thead>
+		<tbody id="myTbody" >
+		{{each resltlst as value i}}
+		<tr>
+			<td>&nbsp;&nbsp;&nbsp;<a href="javascript:;"><i class="Hui-iconfont">&#xe6df;</i>修改</a></td>
+			<td>{{value.enumstat}}</td>
+			<td>{{value.valudesc}}</td>
+			<td>{{value.enumvalu}}</td>
+		</tr>
+		{{/each}}
+		</tbody>
 	</script>
 </head>
 <body onload='thisOnLoad();'>
@@ -35,7 +63,7 @@
 	<table class="table table-border table-bordered table-hover table-bg table-sort">
 		<thead>
 		<tr class="text-c">
-			<th><input class="input-text"  id="enumcols" name="enumcols" value="" autocomplete="off" onkeydown="myKeyDown(this.id)" /></th>
+			<th><input class="input-text"  id="enumcols" name="enumcols" value="" autocomplete="off" onkeydown="queryByEnumcols();" /></th>
 		</tr>
 		</thead>
 		<tbody id="enumTbody" ></tbody>
@@ -45,12 +73,15 @@
 <div class="dislpayArrow hidden-xs"><a class="pngfix" href="javascript:void(0);" onClick="displaynavbar(this)"></a></div>
 <section class="Hui-article-box">
 	<nav class="breadcrumb">
-		<span class="1"><strong>枚举说明：</strong></span>
+		<span class="1">
+			<strong>枚举说明：</strong><strong id="dict_enumname"></strong>
+			<input id="dict_enumcols" type="hidden"/>
+		</span>
 		<span style="float:right;">
 			<span class="1" style="width:50px;">
-				<strong>长度：</strong><input class="input-text"  readonly="readonly" value="10" style="width:50px;"/>
+				<strong>长度：</strong><input id="enumlegh" class="input-text"  readonly="readonly" value="" style="width:50px;"/>
 			</span>
-			<a href="javascript:;" onclick="layer_show('新增枚举','enum-declare-add.html','850','270');"
+			<a href="javascript:;" onclick="layer_show('新增枚举','enum-declare-add.html','850','330');"
 			   class="btn btn-primary-outline"><i class="Hui-iconfont">&#xe600;</i> 新增枚举</a>
 			<a href="javascript:;" onclick="layer_show('删除枚举','project-param-upd.html','1000','720');"
 			   class="btn btn-danger-outline"><i class="Hui-iconfont">&#xe609;</i> 删除枚举</a>
@@ -59,22 +90,8 @@
 
 	<div class="Hui-article">
 		<div class="page-container">
-			<table class="table table-border table-bordered table-hover table-bg table-sort">
-				<thead>
-				<tr class="text-c">
-					<th width="60">操作</th>
-					<th>枚举声明</th>
-					<th>中文描述</th>
-					<th>枚举值</th>
-				</tr>
-				<tr class="text-c">
-					<th width="25"><a href="javascript:;"><i class="Hui-iconfont">&#xe600;</i>新增</a></th>
-					<th><input class="input-text"  id="colstype" name="colstype" value="" autocomplete="off" onkeydown="myKeyDown(this.id)" /></th>
-					<th><input class="input-text"  id="colsccmt" name="colsname" value="" autocomplete="off" onkeydown="myKeyDown(this.id)"/></th>
-					<th><input class="input-text"  id="colslenh" name="colsname" value="" autocomplete="off" onkeydown="myKeyDown(this.id)"/></th>
-				</tr>
-				</thead>
-				<tbody id="myTbody" />
+			<table id="tableBody" class="table table-border table-bordered table-hover table-bg table-sort">
+
 			</table>
 		</div>
 

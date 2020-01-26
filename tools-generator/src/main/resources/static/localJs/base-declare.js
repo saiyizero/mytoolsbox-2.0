@@ -62,7 +62,7 @@ function onInputChange(){
 function onSelectChange(){
    var colstype= $("#colstype").val();
    if(colstype=="EnumType"){
-      layer_show('枚举字典','enum-declare.html','900','660');
+      layer_show('枚举字典','enum-declare-show.html','900','660');
    }
 }
 
@@ -90,3 +90,14 @@ function addWordBook(){
    ajaxPost("baseDeclareControl/addWordBook.req",data,"addWordBookCallBack");
 }
 
+//修改为选项卡
+function changePoint() {
+   var point="<select class=\"select\" id=\"colstype\" name=\"colstype\" size=\"1\"  onchange=\"onSelectChange();\">" +
+       "<option value=\"String\">String</option><option value=\"int\">int</option>" +
+       "<option value=\"Integer\">Integer</option>" +
+       "<option value=\"BigDecimal\">BigDecimal</option>" +
+       "<option value=\"boolean\">boolean</option>" +
+       "<option value=\"long\">long</option>" +
+       "<option value=\"EnumType\">EnumType</option></select>";
+   $("#point_colstype").html(point);
+}

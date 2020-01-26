@@ -34,6 +34,28 @@ public class enumDeclareControl {
         return myJsonUtils.toJsonString(ctxmap);
     }
 
+    /*枚举词典明细查询*/
+    @RequestMapping(value="enumDetailQuery.req",method = {RequestMethod.POST},produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String enumDetailQuery(@RequestParam Map<String,Object> ctxmap){
+
+        ctxmap.putAll(enumdeclareserv.enumDetailQuery(ctxmap));
+        ctxmap.put(myBaseDeclare.respcode, myBaseEnume.E_RESPCODE.SUCESS);
+
+        return myJsonUtils.toJsonString(ctxmap);
+    }
+
+    /*新增枚举明细*/
+    @RequestMapping(value="addEnumDetails.req",method = {RequestMethod.POST},produces = "application/json;charset=UTF-8")
+    @ResponseBody
+    public String addEnumDetails(@RequestParam Map<String,Object> ctxmap){
+
+        ctxmap.putAll(enumdeclareserv.addEnumDetails(ctxmap));
+        ctxmap.put(myBaseDeclare.respcode, myBaseEnume.E_RESPCODE.SUCESS);
+
+        return myJsonUtils.toJsonString(ctxmap);
+    }
+
     /*基础枚举新增*/
     @RequestMapping(value="addEnumDicts.req",method = {RequestMethod.POST},produces = "application/json;charset=UTF-8")
     @ResponseBody
