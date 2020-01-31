@@ -1,8 +1,6 @@
 package com.virugan;
 
-import com.teamdev.jxbrowser.chromium.Browser;
-import com.teamdev.jxbrowser.chromium.events.*;
-import com.teamdev.jxbrowser.chromium.swing.BrowserView;
+
 import com.virugan.myUtlis.myLogUtils;
 import org.springframework.boot.CommandLineRunner;
 import org.springframework.stereotype.Component;
@@ -19,7 +17,7 @@ public class MytoolsboxRun  implements CommandLineRunner {
         System.err.println("MytoolsboxApplication is started !!!");
     }
 
-    public static void RunJFrame() {
+/*    public static void RunJFrame() {
         Browser browser=new Browser();
         BrowserView view = new BrowserView(browser);
         JFrame frame = new JFrame("myToolsBox-2.0");
@@ -32,5 +30,5 @@ public class MytoolsboxRun  implements CommandLineRunner {
         frame.setLocationRelativeTo(null);
         frame.setVisible(true);
         browser.loadURL("http://localhost:3392/index.html");
-    }
+    }*/
 }

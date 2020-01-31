@@ -102,8 +102,8 @@ function addEnumDetails(){
 
 //选中该枚举
 function selectPoint(enumcols){
-    var point="<a href=\"javascript:void(0);\" onclick=\"changePoint();\"><span id='colstype' name='colstype' value='"+
-        enumcols+"'>" +enumcols +"</span></a>";
+    var point="<a href=\"javascript:void(0);\" onclick=\"changePoint();\">" +
+        "<input  id='colstype' name='colstype' type='hidden' value='" + enumcols+"' /><span>" +enumcols +"</span></a>";
 
     var index=parent.layer.getFrameIndex(window.name);
 

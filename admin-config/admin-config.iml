@@ -11,20 +11,6 @@
     </content>
     <orderEntry type="inheritedJdk" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="virugan-common" />
-    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
-    <orderEntry type="module" module-name="virugan-common" />
-    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
-    <orderEntry type="module" module-name="virugan-common" />
-    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
-    <orderEntry type="module" module-name="virugan-common" />
-    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
-    <orderEntry type="module" module-name="virugan-common" />
-    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
-    <orderEntry type="module" module-name="virugan-common" />
-    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
-    <orderEntry type="module" module-name="virugan-common" />
-    <orderEntry type="module" module-name="virugan-springboot-jdbc" />
     <orderEntry type="library" name="Maven: org.mybatis.spring.boot:mybatis-spring-boot-starter:2.1.0" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-starter:2.1.6.RELEASE" level="project" />
     <orderEntry type="library" name="Maven: org.springframework.boot:spring-boot-autoconfigure:2.1.6.RELEASE" level="project" />

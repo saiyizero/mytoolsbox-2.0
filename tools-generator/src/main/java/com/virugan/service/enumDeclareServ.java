@@ -46,7 +46,11 @@ public class enumDeclareServ {
 
         mytoolGetrEnumdict resulEnumdict = localjdbcOperate.selectByPrimaryKey(inGetrEnumdict);
         Map<String, Object> resulMap = myBeanUtils.objectToMap(resulEnumdict);
-        ctxmap.putAll(resulMap);
+
+        if(resulMap!=null){
+            ctxmap.putAll(resulMap);
+        }
+
         mytoolGetrEumdetil inGetrEnumdetil = myBeanUtils.mapToObject(ctxmap, mytoolGetrEumdetil.class);
 
         List<mytoolGetrEumdetil> resltlst = localjdbcOperate.selectListByInput(inGetrEnumdetil);

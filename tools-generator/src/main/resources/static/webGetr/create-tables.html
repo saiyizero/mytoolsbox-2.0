@@ -18,7 +18,7 @@
 	<![endif]-->
 	<title>表结构</title>
 </head>
-<body>
+<body onload="queryTables();">
 <nav class="breadcrumb"><i class="Hui-iconfont">&#xe67f;</i> 首页 <span class="c-gray en">&gt;</span>
 	代码生成器 <span class="c-gray en">&gt;</span> 表结构
 	<a class="btn btn-success radius r" style="line-height:1.6em;margin-top:3px" href="javascript:location.replace(location.href);" title="刷新" >
@@ -35,38 +35,7 @@
 				<div class="codeView docs-example" >
 					<div style="width: 100%;height: 400px;overflow:auto;">
 						<table class="table  table-hover table-bg table-sort" >
-							<tbody id="myTbody" >
-							<tr class="text-c">
-								<th>
-									<a href="javascript:void(0)" onclick="openTables('字典声明表','mytool_getr_basedecl')">
-										<i class="Hui-iconfont">&#xe627;</i>
-										<span>mytool_getr_basedecl</span>
-										<span>字典声明表</span>
-									</a>
-								</th>
-								<th>
-									<a href="javascript:void(0)">
-										<i class="Hui-iconfont">&#xe627;</i>
-										<span>mytool_getr_basedecl</span>
-										<span>字典声明表</span>
-									</a>
-								</th>
-								<th>
-									<a href="javascript:void(0)">
-										<i class="Hui-iconfont">&#xe627;</i>
-										<span>mytool_getr_basedecl</span>
-										<span>字典声明表</span>
-									</a>
-								</th>
-								<th>
-									<a href="javascript:void(0)">
-										<i class="Hui-iconfont">&#xe627;</i>
-										<span>mytool_getr_basedecl</span>
-										<span>字典声明表</span>
-									</a>
-								</th>
-							</tr>
-							</tbody>
+							<tbody id="myTbody" />
 						</table>
 					</div>
 				</div>
@@ -133,5 +102,49 @@
 		});
 	});
 </script>
+
+<script type="text/html" id="table_Template">
+	{{each resltlst as value i}}
+	<tr class="text-c">
+		<th>
+			{{if value.tablcom1 != undefined}}
+			<a href="javascript:void(0)" onclick="openTables('{{value.tablcom1}}','{{value.tablnam1}}')">
+				<i class="Hui-iconfont">&#xe627;</i>
+				<span>{{value.tablnam1}}</span>
+				<span>[{{value.tablcom1}}]</span>
+			</a>
+			{{/if}}
+		</th>
+		<th>
+			{{if value.tablcom2 != undefined}}
+			<a href="javascript:void(0)" onclick="openTables('{{value.tablcom2}}','{{value.tablnam2}}')">
+				<i class="Hui-iconfont">&#xe627;</i>
+				<span>{{value.tablnam2}}</span>
+				<span>[{{value.tablcom2}}]</span>
+			</a>
+			{{/if}}
+		</th>
+		<th>
+			{{if value.tablcom3 != undefined}}
+			<a href="javascript:void(0)" onclick="openTables('{{value.tablcom3}}','{{value.tablnam3}}')">
+				<i class="Hui-iconfont">&#xe627;</i>
+				<span>{{value.tablnam3}}</span>
+				<span>[{{value.tablcom3}}]</span>
+			</a>
+			{{/if}}
+		</th>
+		<th>
+			{{if value.tablcom4 != undefined}}
+			<a href="javascript:void(0)" onclick="openTables('{{value.tablcom4}}','{{value.tablnam4}}')">
+				<i class="Hui-iconfont">&#xe627;</i>
+				<span>{{value.tablnam4}}</span>
+				<span>[{{value.tablcom4}}]</span>
+			</a>
+			{{/if}}
+		</th>
+	</tr>
+	{{/each}}
+</script>
+
 </body>
 </html>

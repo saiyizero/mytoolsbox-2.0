@@ -3,6 +3,10 @@ package com.virugan.constant;
 public class myBaseDeclare {
     /*文件名称*/
     public static String filename="filename";
+    /*文件路径*/
+    public static String filepath="filepath";
+    /*html页面名称*/
+    public static String htmlpage="htmlpage";
     /*归属项目名称*/
     public static String belgprjt="belgprjt";
     /*模块名称*/
@@ -17,4 +21,5 @@ public class myBaseDeclare {
     public static String resltlst="resltlst";
     /*分页数据*/
     public static String pagedata="pagedata";
+
 }
